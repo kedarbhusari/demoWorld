@@ -13,7 +13,7 @@ pipeline {
             stage('Docker Build') {
                 steps {
                     script {
-                        docker.build("demoworld:${TAG}")
+                        sh 'docker image build -t demoworldimg1 .'
                     }
 		}	
             }
