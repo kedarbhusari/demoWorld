@@ -14,8 +14,9 @@ pipeline {
                 steps {
                     script {
                         docker.build("kedarbhusari/hello-world:${TAG}")
-                }
-             }
+                    }
+		}	
+            }
         
             stage('Test') {
 		steps {
