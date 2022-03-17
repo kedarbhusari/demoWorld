@@ -20,15 +20,16 @@ pipeline {
         
             stage('Test') {
 		steps {
-	          	echo 'Testing..'
+                    script {
+	          	sh 'docker save -o demo-world.tar demoworldimg1'
+                    }
 		}
 	    }
 
-		stage('Deploy') {
-			steps {
-				echo 'Deploying....'
-			}
-		}
-
-	}
+            stage('Deploy') {
+		steps {
+			echo 'Deploying....'
+                }
+	   }
+     }
 }
